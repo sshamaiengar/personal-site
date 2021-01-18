@@ -4,7 +4,7 @@
     "contentApiKey": "9cc5c67c358edfdd81455149d0"
   },
   "production": {
-    "apiUrl": "https://gatsby.ghost.io",
-    "contentApiKey": "9cc5c67c358edfdd81455149d0"
+    "apiUrl": "https://blog.sshamaiengar.com",
+    "contentApiKey": "911e330f7dd9679b2ba8101bb9"
   }
 }
