@@ -1,9 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
-import { Layout, PostCard, Pagination } from '../components/common'
+import { Layout, PostCard, Pagination, PostListing } from '../components/common'
 import { MetaData } from '../components/common/meta'
+
+import { latestPosts } from '../utils/siteConfig'
+import headshot from '../images/cool_headshot.png'
 
 /**
 * Main index page (home page)
@@ -13,6 +16,8 @@ import { MetaData } from '../components/common/meta'
 * in /utils/siteConfig.js under `postsPerPage`.
 *
 */
+const indexUrl = `/blog/`
+
 const Index = ({ data, location, pageContext }) => {
     const posts = data.allGhostPost.edges
 
@@ -21,10 +26,26 @@ const Index = ({ data, location, pageContext }) => {
             <MetaData location={location} />
             <Layout isHome={true}>
                 <div className="container">
+                    <section className="site-intro">
+                        <div className="grid-child">
+                            <h1 style={{fontSize: '40px'}}>Hi.</h1>
+                            <p style={{fontSize: '24px', lineHeight: '39px'}}>I'm Stephen. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet rhoncus eros. Maecenas sed justo vehicula ex blandit molestie at et nibh. Integer pharetra rhoncus turpis nec hendrerit.</p>
+                        </div>
+                        <div className="grid-child site-intro-img">
+                            <img src={headshot} alt="Headshot"/>
+                        </div>
+                    </section>
                     <section className="post-feed">
-                        {posts.map(({ node }) => (
+                        <div className="post-feed-header">
+                            <h2>Latest Posts</h2>
+                            <div style={{alignItems: 'center'}}>
+                                <Link to={indexUrl}>All posts</Link>
+                            </div>
+                        </div>
+                        {posts.slice(0, latestPosts).map(({ node }) => (
                             // The tag below includes the markup for each post - components/common/PostCard.js
-                            <PostCard key={node.id} post={node} />
+                            // <PostCard key={node.id} post={node} />
+                            <PostListing key={node.id} post={node} />
                         ))}
                     </section>
                     <Pagination pageContext={pageContext} />
