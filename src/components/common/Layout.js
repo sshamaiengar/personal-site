@@ -6,6 +6,7 @@ import Img from 'gatsby-image'
 
 import { Navigation } from '.'
 import config from '../../utils/siteConfig'
+import resume from '../../../static/resume.pdf'
 
 // Styles
 import '../../styles/app.css'
@@ -64,7 +65,9 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                 </div>
                                 <div className="site-nav-right">
                                     <Link className="site-nav-item" to="/about">About</Link>
-                                    {/* TODO: link to resume here */}
+                                    {/* <a className="site-nav-item" href={resume}>Resume</a>
+                                    <a className="site-nav-item" href="https://linkedin.com/in/sshamaiengar" target="_blank">LinkedIn</a>
+                                    <a className="site-nav-item" href="https://github.com/sshamaiengar" target="_blank">GitHub</a> */}
                                 </div>
                             </nav>
                         </div>

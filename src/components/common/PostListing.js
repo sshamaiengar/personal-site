@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import { Tags } from '@tryghost/helpers-gatsby'
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 
-const PostListing = ({ post }) => {
+const PostListing = ({ post, showTags }) => {
     const url = `/${post.slug}/`
     const readingTime = readingTimeHelper(post)
 
@@ -15,8 +15,8 @@ const PostListing = ({ post }) => {
             </Link>
             <p class="post-listing-excerpt">{post.excerpt}</p>
             <div className="post-listing-footer">
-                {post.tags && <div className="post-listing-tags"> <Tags post={post} visibility="public" autolink={false} /></div>} 
-                {post.tags && <div>–</div>}
+                {post.tags && showTags && <div className="post-listing-tags"> <Tags post={post} visibility="public" autolink={false} /></div>} 
+                {post.tags && showTags && <div className="post-listing-tags">–</div>}
                 <div className="post-listing-reading-time">{readingTime}</div>
             </div>
             
@@ -68,6 +68,7 @@ PostListing.propTypes = {
             profile_image: PropTypes.string,
         }).isRequired,
     }).isRequired,
+    showTags: PropTypes.bool.isRequired
 }
 
 export default PostListing

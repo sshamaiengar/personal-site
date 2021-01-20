@@ -836,6 +836,10 @@ h6 {
     flex-grow: 0;
 }
 
+.all-post-feed-header {
+    border: 0;
+}
+
 @media (max-width: 980px) {
     .post-feed {
         grid-template-columns: 1fr 1fr;
@@ -853,6 +857,7 @@ h6 {
 
 .post-listing-title {
     font-size: 1.5em;
+    font-weight: 500;
 }
 
 .post-listing p {
@@ -880,7 +885,7 @@ h6 {
 }
 
 .post-listing-reading-time {
-    margin-left: 0.5em;
+    /* padding-left: 0.5em; */
 }
 
 .post-card {
@@ -986,6 +991,22 @@ h6 {
     .tag-header p {
         font-size: 1.7rem;
     }
+}
+
+.tag-listing {
+    margin-bottom: 1em;
+}
+
+.tag-listing * {
+    font-size: 1.5em;
+}
+
+.tag-listing div {
+    display: inline-block;
+}
+
+.tag-listing a {
+    margin-right: 1em;
 }
 
 
