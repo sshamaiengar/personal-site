@@ -6,7 +6,7 @@ import { Layout, PostCard, Pagination, PostListing } from '../components/common'
 import { MetaData } from '../components/common/meta'
 
 import { latestPosts } from '../utils/siteConfig'
-import headshot from '../images/cool_headshot.png'
+import headshot from '../images/headshot-2023-small.jpeg'
 
 /**
 * Main index page (home page)
@@ -28,8 +28,8 @@ const Index = ({ data, location, pageContext }) => {
                 <div className="container">
                     <section className="site-intro">
                         <div className="grid-child">
-                            <h1 style={{fontSize: '40px'}}>Hi.</h1>
-                            <p style={{fontSize: '24px', lineHeight: '39px'}}>I'm Stephen. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet rhoncus eros. Maecenas sed justo vehicula ex blandit molestie at et nibh. Integer pharetra rhoncus turpis nec hendrerit.</p>
+                            <h3 style={{fontSize: '40px'}}>Hey,</h3>
+                            <p style={{fontSize: '20px', lineHeight: '36px'}}>I'm Stephen Shamaiengar (pronounced <i>shuh-MINE-gar</i>). I'm a software engineer at Microsoft in Seattle, working on Azure.</p>
                         </div>
                         <div className="grid-child site-intro-img">
                             <img src={headshot} alt="Headshot"/>
@@ -37,9 +37,9 @@ const Index = ({ data, location, pageContext }) => {
                     </section>
                     <section className="post-feed">
                         <div className="post-feed-header">
-                            <h2>Latest Posts</h2>
+                            <h2>Latest</h2>
                             <div style={{alignItems: 'center'}}>
-                                <Link to={blogUrl}>View all posts</Link>
+                                <Link to={blogUrl}>All</Link>
                             </div>
                         </div>
                         {posts.slice(0, latestPosts).map(({ node }) => (

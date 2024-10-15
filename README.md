@@ -24,7 +24,7 @@ git clone https://github.com/TryGhost/gatsby-starter-ghost.git
 cd gatsby-starter-ghost
 ```
 
-Then install dependencies
+Then install dependencies (requires Node/npm and Yarn):
 
 ```bash
 yarn
@@ -37,8 +37,10 @@ yarn
 Start the development server. You now have a Gatsby site pulling content from headless Ghost.
 
 ```bash
-gatsby develop
+npm run dev
 ```
+
+(NB 10/14/24: Normally, could do `yarn gatsby develop`, but this gave an error so I updated the `dev` script in packages.json with a fix.)
 
 By default, the starter will populate content from a default Ghost install located at https://gatsby.ghost.io.
 

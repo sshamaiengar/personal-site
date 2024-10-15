@@ -17,9 +17,9 @@ const Tags = ({ data, location, pageContext }) => {
                 <div className="container">
                     <section className="post-feed">
                         <div className="post-feed-header all-post-feed-header">
-                            <h1>All Tags</h1>
+                            <h1>Tags</h1>
                             <div style={{alignItems: 'center'}}>
-                                <Link to={blogUrl}>View all posts</Link>
+                                <Link to={blogUrl}>All posts</Link>
                             </div>
                         </div>
                         {tags.map(({ node }) => {
