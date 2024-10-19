@@ -454,8 +454,24 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+.post-full-content a {
     text-decoration: underline;
+    text-underline-offset: .25rem;
+    text-decoration-thickness: .25rem;
+    text-decoration-skip-ink: none;
+    text-decoration-color: #7fa2c3;
+}
+
+.site-intro a {
+    text-decoration: underline;
+    text-underline-offset: .25rem;
+    text-decoration-thickness: .25rem;
+    text-decoration-skip-ink: none;
+    text-decoration-color: #cedce4;
+}
+
+a:hover {
+    text-decoration-color: #666;
 }
 
 .site-mast a {
