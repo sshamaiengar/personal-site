@@ -470,6 +470,14 @@ a {
     text-decoration-color: #cedce4;
 }
 
+article.content a {
+    text-decoration: underline;
+    text-underline-offset: .25rem;
+    text-decoration-thickness: .25rem;
+    text-decoration-skip-ink: none;
+    text-decoration-color: #7fa2c3;
+}
+
 a:hover {
     text-decoration-color: #666;
 }
