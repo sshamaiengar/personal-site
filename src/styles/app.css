@@ -478,8 +478,8 @@ article.content a {
     text-decoration-color: #7fa2c3;
 }
 
-a:hover {
-    text-decoration-color: #666;
+article.content a:hover {
+    text-decoration-color: #4c4b63;
 }
 
 .site-mast a {
