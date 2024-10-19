@@ -35,19 +35,24 @@ const Index = ({ data, location, pageContext }) => {
                             <img src={headshot} alt="Headshot"/>
                         </div>
                     </section>
-                    <section className="post-feed">
-                        <div className="post-feed-header">
-                            <h2>Latest</h2>
-                            <div style={{alignItems: 'center'}}>
-                                <Link to={blogUrl}>All</Link>
-                            </div>
-                        </div>
-                        {posts.slice(0, latestPosts).map(({ node }) => (
-                            // The tag below includes the markup for each post - components/common/PostCard.js
-                            // <PostCard key={node.id} post={node} />
-                            <PostListing key={node.id} post={node} showTags={true}/>
-                        ))}
-                    </section>
+                        <section className="post-feed">
+                            {posts.length > 0 ? ([
+                                <div className="post-feed-header">
+                                    <h2>Latest</h2>
+                                    <div style={{alignItems: 'center'}}>
+                                        <Link to={blogUrl}>All</Link>
+                                    </div>
+                                </div>,
+                                posts.slice(0, latestPosts).map(({ node }) => (
+                                    // The tag below includes the markup for each post - components/common/PostCard.js
+                                    // <PostCard key={node.id} post={node} />
+                                    <PostListing key={node.id} post={node} showTags={true}/>
+                                ))
+                            ]) : (
+                                <div className="post-feed-header all-post-feed-header">
+                                </div>
+                            )}
+                        </section>
                     <Pagination pageContext={pageContext} />
                 </div>
             </Layout>

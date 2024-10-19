@@ -16,17 +16,23 @@ const Blog = ({ data, location, pageContext }) => {
             <Layout isHome={true}>
                 <div className="container">
                     <section className="post-feed">
-                        <div className="post-feed-header all-post-feed-header">
-                            <h1>Posts</h1>
-                            <div style={{alignItems: 'center'}}>
-                                <Link to={tagsUrl}>Tags</Link>
+                        {posts.length > 0 ? ([
+                            <div className="post-feed-header all-post-feed-header">
+                                <h1>Posts</h1>
+                                <div style={{alignItems: 'center'}}>
+                                    <Link to={tagsUrl}>Tags</Link>
+                                </div>
+                            </div>,
+                            posts.map(({ node }) => (
+                                // The tag below includes the markup for each post - components/common/PostCard.js
+                                // <PostCard key={node.id} post={node} />
+                                <PostListing key={node.id} post={node} showTags={true}/>
+                            ))
+                        ]) : (
+                            <div className="post-feed-header all-post-feed-header">
+                                <p>Nothing here yet...</p>
                             </div>
-                        </div>
-                        {posts.map(({ node }) => (
-                            // The tag below includes the markup for each post - components/common/PostCard.js
-                            // <PostCard key={node.id} post={node} />
-                            <PostListing key={node.id} post={node} showTags={true}/>
-                        ))}
+                        )}
                     </section>
                     <Pagination pageContext={pageContext} />
                 </div>
