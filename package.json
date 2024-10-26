@@ -1,13 +1,13 @@
 {
-  "name": "gatsby-starter-ghost",
-  "description": "A starter template to build lightning fast websites with Ghost and Gatsby",
+  "name": "sshamaiengar.com",
+  "description": "My thoughts, stories, and ideas",
   "version": "1.0.0",
   "license": "MIT",
-  "author": "Ghost Foundation",
-  "homepage": "https://docs.ghost.org/api/gatsby/",
+  "author": "Stephen Shamaiengar",
+  "homepage": "https://sshamaiengar.com/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tryghost/gatsby-starter-ghost.git"
+    "url": "git+https://github.com/sshamaiengar/personal-site.git"
   },
   "resolutions": {
     "sharp": "0.27.0"
@@ -16,7 +16,7 @@
     "node": ">= 10.13.0"
   },
   "bugs": {
-    "url": "https://github.com/tryghost/gatsby-starter-ghost/issues"
+    "url": "https://github.com/sshamaiengar/personal-site/issues"
   },
   "keywords": [
     "gatsby",
